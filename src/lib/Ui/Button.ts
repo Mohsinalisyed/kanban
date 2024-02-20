@@ -9,7 +9,7 @@ const buttonStyles = css`
   padding: 10px 20px;
   cursor: pointer;
   border: none;
-  border-radius: 4px;
+  border-radius: 16px;
   font-weight: bold;
 `;
 

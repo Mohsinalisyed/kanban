@@ -1,11 +1,14 @@
 // MainSidebar.js
 import React from 'react';
 import { Sidebar, MenuItem } from 'react-pro-sidebar';
-import Toggle from '../../theme/Toggoler';
 import { StyledMenu } from './style';
 import { HeadingS } from '../../style';
 import LogoDark from '../../lib/Svg/LogoDark';
 import LogoLight from '../../lib/Svg/LogoLight';
+import { Link} from 'react-router-dom';
+import Switch from '../../lib/Ui/Switch';
+import { Box } from '../../lib/Ui/Box';
+import Flex from '../../lib/Ui/Flex';
 interface ISidebar {
     theme: string
     toggleTheme: () => void
@@ -22,13 +25,17 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme }) => {
             <div style={{ background: theme === 'light' ? "#fff" : "#363537", padding: "22px 10px 50px 0px" }} >
                 <div style={{ marginBottom: "45px", paddingLeft: "20px" }}>{theme === 'light' ? <LogoDark /> : <LogoLight />}</div>
                 <StyledMenu>
-                    <HeadingS style={{ margin: "0", paddingLeft: "20px" }}>All Boards (3)</HeadingS>
-                    <MenuItem>Platform Launch</MenuItem>
-                    <MenuItem>Marketing Plan</MenuItem>
-                    <MenuItem>Roadmap</MenuItem>
-                    <MenuItem>+ Create New Board</MenuItem>
+                    <HeadingS style={{ margin: "0", paddingLeft: "20px", color: theme === 'light' ? "#828FA3" : "#828FA3" }}>All Boards (3)</HeadingS>
+                    <MenuItem component={<Link to='/platform'/>} style={{ color: theme === 'light' ? "#828FA3" : "#828FA3" }}>
+                       Platform Launch
+                    </MenuItem>
+                    <MenuItem style={{ color: theme === 'light' ? "#828FA3" : "#828FA3" }}>Marketing Plan</MenuItem>
+                    <MenuItem style={{ color: theme === 'light' ? "#828FA3" : "#828FA3" }}>Roadmap</MenuItem>
+                    <MenuItem style={{ color: "#635FC7" }}><HeadingS>+ Create New Board</HeadingS></MenuItem>
                 </StyledMenu>
-                <Toggle theme={theme} toggleTheme={toggleTheme} />
+                <Flex justify='center' style={{ background: theme === 'light' ? '#E4EBFA' :"black", marginLeft:"20px" ,width:"185px",padding:"10px"}}>
+                    <Switch id="themeSwitch" toggled={theme === 'dark'} onChange={toggleTheme} />
+                </Flex>
             </div>
         </Sidebar >
     );

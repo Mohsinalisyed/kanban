@@ -1,17 +1,17 @@
 import styled from "styled-components";
-
-// Define the Plus Jakarta Sans font family
 const plusJakartaSans = "Plus Jakarta Sans, sans-serif";
 
+type ColorProps = { color?: string };
+
 // Common styles
-const commonStyles = `
+const commonStyles = ({ color }: ColorProps) => `
   font-family: ${plusJakartaSans};
   line-height: 21px;
   -webkit-font-smoothing: antialiased;
 `;
 
 // Heading (XL)
-export const HeadingXL = styled.h1`
+export const HeadingXL = styled.h1<ColorProps>`
   ${commonStyles}
   display: block;
   font-weight: bold;
@@ -20,46 +20,46 @@ export const HeadingXL = styled.h1`
 `;
 
 // Heading (L)
-export const HeadingL = styled.h2`
+export const HeadingL = styled.h2<ColorProps>`
   ${commonStyles}
   display: block;
   font-weight: bold;
   font-size: 18px;
   line-height: 23px;
-  width: 297px;
+  
 `;
 
 // Heading (M)
-export const HeadingM = styled.h3`
+export const HeadingM = styled.h3<ColorProps>`
   ${commonStyles}
   display: block;
   font-weight: bold;
   font-size: 15px;
   line-height: 19px;
-  width: 297px;
+  
 `;
 
 // Heading (S)
-export const HeadingS = styled.h4`
+export const HeadingS = styled.h4<ColorProps>`
   ${commonStyles}
   display: block;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
-  width: 297px;
-  letter-spacing: 2.4px; /* Kerning */
 `;
 
 // Additional variant with Medium weight
-export const MediumText = styled.p`
+export const MediumText = styled.p<ColorProps>`
   ${commonStyles}
   display: block;
   font-weight: medium;
   font-size: 13px;
   line-height: 23px;
-  width: 297px;
+  
 `;
-export const Container = styled.div`
+
+export const Container = styled.div<ColorProps>`
+  ${commonStyles}
   margin: 0 auto; /* Center the container */
   padding: 0 20px; /* Add padding on the sides */
   max-width: 1920px; /* Set a maximum width for the container */

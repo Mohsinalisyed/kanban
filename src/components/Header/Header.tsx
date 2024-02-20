@@ -1,17 +1,14 @@
 import React from 'react'
 import { HeadingL } from '../../style'
+import Button from '../../lib/Ui/Button'
+import { containerStyles } from './style'
+import { Box } from '../../lib/Ui/Box'
 const Header = () => {
     return (
-        <div style={{
-            display: "flex", justifyContent: "space-between",
-            padding: "10px 30px",
-            paddingLeft: "18%",
-            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-
-        }}>
+        <Box style={containerStyles}> 
             <HeadingL>Platform launch</HeadingL>
-            <button>Add new task</button>
-        </div>
+            <Button variant="primarySmall" style={{height:"36px"}}>+ Add new task</Button>
+        </Box>
     )
 }
 
