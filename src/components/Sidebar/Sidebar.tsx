@@ -29,7 +29,7 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme }) => {
                 <Box style={{ marginBottom: "45px", paddingLeft: "20px" }}>{theme === 'light' ? <LogoDark /> : <LogoLight />}</Box>
                 <StyledMenu>
                     <HeadingS style={{ margin: "0", paddingLeft: "20px", color: "#828FA3" }}>All Boards (3)</HeadingS>
-                    <MenuItem component={<Link to='/platform' />} style={{ color: "#828FA3" }}>
+                    <MenuItem component={<Link to='/' />} style={{ color: "#828FA3" }}>
                         Platform Launch
                     </MenuItem>
                     <MenuItem style={{ color: "#828FA3" }}>Marketing Plan</MenuItem>

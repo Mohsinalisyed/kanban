@@ -25,8 +25,8 @@ const App = () => {
               <Header />
               <Box style={{ marginLeft: "250px", padding: "24px", backgroundColor: themeMode.backgroundColor, }}>
                 <Routes>
-                  <Route path="/" element={<Main />} />
-                  <Route path="/platform" element={<Platform />} />
+                  <Route path="/" element={<Platform />} />
+                  {/* <Route path="/platform" element={<Platform />} /> */}
                 </Routes>
               </Box>
             </Box>
