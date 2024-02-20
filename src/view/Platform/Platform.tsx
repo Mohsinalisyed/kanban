@@ -5,7 +5,9 @@ import Column from "./components/Column";
 import { kandanData } from "../../utlis/data";
 import { Box } from "../../lib/Ui/Box";
 
-
+interface IPlatForm {
+    theme: string
+}
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -13,15 +15,15 @@ const GridContainer = styled.div`
   gap:24px;
 `;
 
-const Platform = () => {
+const Platform: React.FC<IPlatForm> = ({ theme }) => {
     return (
 
         <Box>
             {kandanData.boards.map((board) => (
                 <GridContainer>
-                    <Column key={board.name} columns={board.columns} status={'Todo'} />
-                    <Column key={board.name} columns={board.columns} status={'Doing'} />
-                    <Column key={board.name} columns={board.columns} status={'Done'} />
+                    <Column key={board.name} columns={board.columns} status={'Todo'} theme={theme} />
+                    <Column key={board.name} columns={board.columns} status={'Doing'} theme={theme} />
+                    <Column key={board.name} columns={board.columns} status={'Done'} theme={theme} />
                 </GridContainer >
 
             ))

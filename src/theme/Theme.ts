@@ -4,7 +4,7 @@ export const lightTheme = {
   toggleBorder: "#FFF",
   background: "#363537",
   backgroundColor: "#E4EBFA",
-  cardbackground: "red",
+  cardbackground: "#fff",
 };
 export const darkTheme = {
   body: "#363537",

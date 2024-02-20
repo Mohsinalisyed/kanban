@@ -7,7 +7,6 @@ import { useDarkMode } from "./hooks/useTheme";
 import MainSidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./view/Main";
 import Platform from "./view/Platform/Platform";
 import { Box } from "./lib/Ui/Box";
 import { Container } from "./style";
@@ -25,7 +24,7 @@ const App = () => {
               <Header />
               <Box style={{ marginLeft: "250px", padding: "24px", backgroundColor: themeMode.backgroundColor, }}>
                 <Routes>
-                  <Route path="/" element={<Platform />} />
+                  <Route path="/" element={<Platform theme={theme} />} />
                   {/* <Route path="/platform" element={<Platform />} /> */}
                 </Routes>
               </Box>
