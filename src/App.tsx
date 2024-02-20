@@ -5,14 +5,19 @@ import { darkTheme, lightTheme } from "./theme/Theme";
 import { GlobalStyles } from "./theme/GlobalStyle";
 import { useDarkMode } from "./hooks/useTheme";
 import MainSidebar from "./components/Sidebar/Sidebar";
-
+import Header from "./components/Header/Header";
 const App = () => {
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <MainSidebar theme={theme} toggleTheme={themeToggler} />
+      <div style={{ position: "relative" }}>
+        <MainSidebar theme={theme} toggleTheme={themeToggler} />
+        <div style={{ position: "absolute", top: "0", width: "100%", }}>
+          <Header />
+        </div>
+      </div>
     </ThemeProvider>
 
   );

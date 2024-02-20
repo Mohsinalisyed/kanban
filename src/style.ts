@@ -59,3 +59,13 @@ export const MediumText = styled.p`
   line-height: 23px;
   width: 297px;
 `;
+export const Container = styled.div`
+  margin: 0 auto; /* Center the container */
+  padding: 0 20px; /* Add padding on the sides */
+  max-width: 1920px; /* Set a maximum width for the container */
+
+  @media (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    padding: 0 10px;
+  }
+`;
