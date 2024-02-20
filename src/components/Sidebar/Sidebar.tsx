@@ -23,10 +23,10 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme }) => {
                 <div style={{ marginBottom: "45px", paddingLeft: "20px" }}>{theme === 'light' ? <LogoDark /> : <LogoLight />}</div>
                 <StyledMenu>
                     <HeadingS style={{ margin: "0", paddingLeft: "20px" }}>All Boards (3)</HeadingS>
-                    <MenuItem>Documentation</MenuItem>
-                    <MenuItem>Calendar</MenuItem>
-                    <MenuItem>Documentation</MenuItem>
-                    <MenuItem>Calendar</MenuItem>
+                    <MenuItem>Platform Launch</MenuItem>
+                    <MenuItem>Marketing Plan</MenuItem>
+                    <MenuItem>Roadmap</MenuItem>
+                    <MenuItem>+ Create New Board</MenuItem>
                 </StyledMenu>
                 <Toggle theme={theme} toggleTheme={toggleTheme} />
             </div>
