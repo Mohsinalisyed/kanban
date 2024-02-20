@@ -20,6 +20,8 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme }) => {
     return (
         <Sidebar style={{
             border: 'none',
+            position: "fixed",
+            zIndex: "999",
             display: "flex",
             alignItems: "space-between",
             flexDirection: "column",

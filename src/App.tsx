@@ -21,8 +21,10 @@ const App = () => {
           <Box style={{ position: "relative" }}>
             <MainSidebar theme={theme} toggleTheme={themeToggler} />
             <Box style={{ position: "absolute", top: "0", width: "100%", }}>
-              <Header />
-              <Box style={{ marginLeft: "250px", padding: "24px", backgroundColor: themeMode.backgroundColor, }}>
+              <Box style={{ position: "fixed", top: "0", width: "100%", background: themeMode.body, }}>
+                <Header />
+              </Box>
+              <Box style={{ marginLeft: "250px", padding: "110px 24px 24px 24px", backgroundColor: themeMode.backgroundColor, }}>
                 <Routes>
                   <Route path="/" element={<Platform theme={theme} />} />
                   {/* <Route path="/platform" element={<Platform />} /> */}
@@ -32,7 +34,7 @@ const App = () => {
           </Box>
         </ThemeProvider >
       </BrowserRouter >
-    </Container>
+    </Container >
   );
 };
 export default App;
