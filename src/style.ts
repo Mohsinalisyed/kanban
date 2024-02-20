@@ -21,7 +21,7 @@ export const HeadingXL = styled.h1`
 export const HeadingL = styled.h2`
   ${commonStyles}
 
-  font-weight: bold;
+  font-weight: 600;
   font-size: 18px;
   line-height: 23px;
 `;

@@ -4,6 +4,9 @@ import styled from "styled-components";
 import Column from "./components/Column";
 import { kandanData } from "../../utlis/data";
 import { Box } from "../../lib/Ui/Box";
+import Flex from "../../lib/Ui/Flex";
+import { HeadingL } from "../../style";
+import { darkTheme, lightTheme } from "../../theme/Theme";
 
 interface IPlatForm {
     theme: string
@@ -16,6 +19,8 @@ const GridContainer = styled.div`
 `;
 
 const Platform: React.FC<IPlatForm> = ({ theme }) => {
+    const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
     return (
 
         <Box>
@@ -24,6 +29,9 @@ const Platform: React.FC<IPlatForm> = ({ theme }) => {
                     <Column key={board.name} columns={board.columns} status={'Todo'} theme={theme} />
                     <Column key={board.name} columns={board.columns} status={'Doing'} theme={theme} />
                     <Column key={board.name} columns={board.columns} status={'Done'} theme={theme} />
+                    <Flex align="center" justify="center" style={{ background: themeMode.cardbackground, borderRadius: "8px", marginTop: "38px" }}>
+                        <HeadingL style={{ color: "#828FA3" }}>+ New Column</HeadingL>
+                    </Flex>
                 </GridContainer >
 
             ))
