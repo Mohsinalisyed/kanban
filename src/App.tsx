@@ -21,7 +21,6 @@ const App = () => {
             <div>
               <Button variant="primaryLarge">Button Primary (L)</Button>
               <Button variant="primarySmall">Button Primary (S)</Button>
-              <Button variant="secondary">Button Secondary</Button>
               <Button variant="destructive">Button Destructive</Button>
             </div>
           </div>
