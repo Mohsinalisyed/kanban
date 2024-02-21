@@ -14,7 +14,7 @@ const buttonStyles = css`
 `;
 
 const primaryButtonStyles = css`
-  background-color: #3498db;
+  background-color:  #635FC7;
   color: #fff;
 `;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import "./App.css";
 import { darkTheme, lightTheme } from "./theme/Theme";
@@ -11,6 +11,7 @@ import Platform from "./view/Platform/Platform";
 import { Box } from "./lib/Ui/Box";
 import { Container } from "./style";
 const App = () => {
+  const [isSidebarHidden, setIsSidebarHidden] = useState(false);
   const [theme, themeToggler] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
   return (
@@ -19,12 +20,12 @@ const App = () => {
         <ThemeProvider theme={themeMode}>
           <GlobalStyles />
           <Box style={{ position: "relative" }}>
-            <MainSidebar theme={theme} toggleTheme={themeToggler} />
+            <MainSidebar theme={theme} toggleTheme={themeToggler} setIsSidebarHidden={(e)=>setIsSidebarHidden(e)} isSidebarHidden={isSidebarHidden} />
             <Box style={{ position: "absolute", top: "0", width: "100%", }}>
-              <Box style={{ position: "fixed", top: "0", width: "100%", background: themeMode.body, }}>
-                <Header />
+              <Box style={{ marginLeft: isSidebarHidden ? '0' : "250px", position: "fixed", top: "0", width: "100%", background: themeMode.body, }}>
+                <Header theme={theme} isSidebarHidden={isSidebarHidden } />
               </Box>
-              <Box style={{ marginLeft: "250px", padding: "110px 24px 24px 24px", backgroundColor: themeMode.backgroundColor, }}>
+              <Box style={{ marginLeft: isSidebarHidden ? '0': "250px", padding: "110px 24px 24px 24px", backgroundColor: themeMode.backgroundColor, }}>
                 <Routes>
                   <Route path="/" element={<Platform theme={theme} />} />
                   {/* <Route path="/platform" element={<Platform />} /> */}
