@@ -22,7 +22,7 @@ const Platform: React.FC<IPlatForm> = ({ theme }) => {
 
     return (
 
-        <Box style={{minWidth:"100vh"}}>
+        <Box style={{minHeight:"100vh"}}>
             {kandanData.boards.map((board) => (
                 <GridContainer>
                     <Column key={board.name} columns={board.columns} status={'Todo'} theme={theme} />

@@ -15,9 +15,9 @@ const Header: React.FC<IHeader> = ({ theme, isSidebarHidden }) => {
     return (
         <Container>
             <Box style={logoStyles}>
-                {isSidebarHidden && <Box>{theme === 'light' ? <LogoDark /> : <LogoLight />}</Box>}
-                <Box style={{ ...containerStyles, width: isSidebarHidden ? '100%' : "80%", padding: isSidebarHidden ? '24px 24px 24px 65px' : "24px 24px 24px 0px" }}>
-                    <HeadingXL style={{color:themeMode.text}}>Platform Launch</HeadingXL>
+                {isSidebarHidden && <Box style={{marginRight:"140px"}}>{theme === 'light' ? <LogoDark /> : <LogoLight />}</Box>}
+                <Box style={{ ...containerStyles, width:"100%", padding: isSidebarHidden ? '24px 20px 24px 0px' : "24px 24px 24px 0px" }}>
+                    <HeadingXL style={{ color: themeMode.text, marginLeft: isSidebarHidden ? '0' : "250px" }}>Platform Launch</HeadingXL>
                     <Box style={{display:"flex"}}>
                         <Button variant="primarySmall" style={{ height: "36px", marginRight: isSidebarHidden ? '0px' : "0" }}>+ Add new task</Button>
                         <Dropdown style={{margin:"8px 0 0 20px"}}>
