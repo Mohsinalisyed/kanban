@@ -1,4 +1,4 @@
-// MainSidebar.js
+// MainSidebar.ts
 import React, { useState } from 'react';
 import { Sidebar, MenuItem } from 'react-pro-sidebar';
 import { StyledMenu } from './style';
@@ -39,7 +39,7 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidde
                 <StyledMenu>
                     <HeadingS style={{ margin: "0", paddingLeft: "20px", color: "#828FA3" }}>All Boards (3)</HeadingS>
                     <MenuItem component={<Link to='/' />} style={{ color: "#828FA3" }}>
-                        Platform Launch
+                    Platform Launch
                     </MenuItem>
                     <MenuItem style={{ color: "#828FA3" }}>Marketing Plan</MenuItem>
                     <MenuItem style={{ color: "#828FA3" }}>Roadmap</MenuItem>
@@ -57,7 +57,7 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidde
                 isSidebarHidden && (
                     <Box onClick={handleToggleSidebar}
                         style={{
-                            position: "fixed", top: "85%", padding: "18px", background: "#635FC7", borderTopRightRadius: "100%", borderBottomRightRadius: "100%"
+                        position: "fixed", top: "85%", padding: "18px", background: "#635FC7", borderTopRightRadius: "100%", borderBottomRightRadius: "100%"
                         }}>
                         <ShowSidebar />
                     </Box>

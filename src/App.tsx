@@ -22,9 +22,9 @@ const App = () => {
           <Box style={{ position: "relative" }}>
             <MainSidebar theme={theme} toggleTheme={themeToggler} setIsSidebarHidden={(e)=>setIsSidebarHidden(e)} isSidebarHidden={isSidebarHidden} />
             <Box style={{ position: "absolute", top: "0", width: "100%", }}>
-              <Container style={{ marginLeft: isSidebarHidden ? '0' : "250px", position: "fixed", top: "0", width: "100%", background: themeMode.body, }}>
+              <Box style={{ marginLeft: isSidebarHidden ? '0' : "250px", position: "fixed", top: "0", width: "100%", background: themeMode.body, }}>
                 <Header theme={theme} isSidebarHidden={isSidebarHidden } />
-              </Container>
+              </Box>
               <Box style={{ marginLeft: isSidebarHidden ? '0': "250px", padding: "110px 24px 24px 24px", backgroundColor: themeMode.backgroundColor, }}>
                 <Routes>
                   <Route path="/" element={<Platform theme={theme} />} />

@@ -1,10 +1,8 @@
-// Column.js
+// Column.ts
 import React from "react";
 import { HeadingS } from "../../../style";
 import Task from "./Task";
 import { Box } from "../../../lib";
-
-
 
 const Column = ({ columns, status, theme }: any) => {
     return (

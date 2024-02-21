@@ -1,4 +1,4 @@
-// Platform.js
+// Platform.ts
 import React from "react";
 import styled from "styled-components";
 import Column from "./components/Column";
