@@ -20,7 +20,7 @@ const SwitchLabel = styled.label`
   background:#635FC7;
   cursor: pointer;
   width: 50px;
-  height: 25px;
+  height: 23.5px;
   border-radius: 100px;
   position: relative;
   transition: background-color 0.2s;
@@ -47,7 +47,7 @@ const SwitchButton = styled.span`
   }
 `;
 
-const Switch: React.FC<SwitchProps> = ({ id, toggled, onChange }) => {
+export const Switch: React.FC<SwitchProps> = ({ id, toggled, onChange }) => {
     return (
         <>
             <SwitchInput
@@ -64,4 +64,3 @@ const Switch: React.FC<SwitchProps> = ({ id, toggled, onChange }) => {
     );
 };
 
-export default Switch;

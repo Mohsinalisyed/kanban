@@ -38,8 +38,7 @@ export const HeadingM = styled.h3`
 // Heading (S)
 export const HeadingS = styled.h4`
   ${commonStyles}
-
-  font-weight: bold;
+  font-weight: 500;
   font-size: 12px;
   line-height: 15px;
 `;

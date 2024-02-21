@@ -1,19 +1,11 @@
 // MainSidebar.js
-import React from 'react';
+import React, { useState } from 'react';
 import { Sidebar, MenuItem } from 'react-pro-sidebar';
 import { StyledMenu } from './style';
 import { HeadingS } from '../../style';
-import LogoDark from '../../lib/Svg/LogoDark';
-import LogoLight from '../../lib/Svg/LogoLight';
 import { Link } from 'react-router-dom';
-import Switch from '../../lib/Ui/Switch';
-import Flex from '../../lib/Ui/Flex';
-import { Box } from '../../lib/Ui/Box';
-import DarkIcon from '../../lib/Svg/DarkIcon';
-import LightIcon from '../../lib/Svg/LightIcon';
-import HideSidebar from '../../lib/Svg/HideSidebar';
 import { darkTheme, lightTheme } from '../../theme/Theme';
-import ShowSidebar from '../../lib/Svg/ShowSidebar';
+import { Box, DarkIcon, Flex, HideSidebar, LightIcon, LogoDark, LogoLight, Modal, ShowSidebar, Switch } from '../../lib';
 interface ISidebar {
     theme: string
     toggleTheme: () => void
@@ -22,12 +14,18 @@ interface ISidebar {
 }
 const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidden ,isSidebarHidden}) => {
     const themeMode = theme === 'light' ? lightTheme : darkTheme;
+    const [showModal, setShowModal] = useState(false);
 
+    const openModal = () => {
+        setShowModal((prev) => !prev);
+    };
+    console.log(showModal)
     const handleToggleSidebar = () => {
         setIsSidebarHidden(!isSidebarHidden);
     };
     return (
-        <Sidebar style={{
+    <>
+            <Sidebar style={{
             border: 'none',
             position: "fixed",
             zIndex: "999",
@@ -45,7 +43,7 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidde
                     </MenuItem>
                     <MenuItem style={{ color: "#828FA3" }}>Marketing Plan</MenuItem>
                     <MenuItem style={{ color: "#828FA3" }}>Roadmap</MenuItem>
-                    <MenuItem style={{ color: "#635FC7" }}><HeadingS>+ Create New Board</HeadingS></MenuItem>
+                    <MenuItem style={{ color: "#635FC7" }} onClick={openModal}><HeadingS>+ Create New Board</HeadingS></MenuItem>
                 </StyledMenu>
                 <Flex justify='center' align='center' style={{ background: theme === 'light' ? '#E4EBFA' : "#000112", marginLeft: "20px", width: "185px", padding: "10px" }}>
                     <Box style={{ marginRight: "20px", marginTop: "6px" }}><LightIcon /></Box>
@@ -65,7 +63,10 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidde
                     </Box>
                 )
            }
-        </Sidebar >
+            </Sidebar >
+            <Modal showModal={showModal} setShowModal={setShowModal} theme={theme} />
+
+            </>
     );
 };
 

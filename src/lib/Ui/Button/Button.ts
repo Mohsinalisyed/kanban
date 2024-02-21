@@ -28,7 +28,7 @@ const destructiveButtonStyles = css`
   color: #fff;
 `;
 
-const Button = styled.button<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   ${buttonStyles}
 
   ${({ variant }) => {
@@ -50,4 +50,3 @@ const Button = styled.button<ButtonProps>`
   }}
 `;
 
-export default Button;

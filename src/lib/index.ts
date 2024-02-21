@@ -1,2 +1,2 @@
-export * from "./Svg/DarkIcon";
-export * from "./Svg/LightIcon";
+export * from './Ui'
+export * from './Svg'

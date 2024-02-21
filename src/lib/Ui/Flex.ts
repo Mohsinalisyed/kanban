@@ -13,7 +13,7 @@ interface FlexProps {
     variant?: string;
 }
 
-const Flex = styled.div<FlexProps>`
+export const Flex = styled.div<FlexProps>`
   display: flex;
   width: 100%;
   flex-direction: ${(props) => props.direction || 'row'};
@@ -54,4 +54,4 @@ Flex.defaultProps = {
     wrap: 'noWrap',
 };
 
-export default Flex;
+

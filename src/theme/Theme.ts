@@ -5,6 +5,7 @@ export const lightTheme = {
   background: "#363537",
   backgroundColor: "#E4EBFA",
   cardbackground: "#fff",
+  modalbg:'#fff'
 };
 export const darkTheme = {
   body: "#363537",
@@ -13,4 +14,5 @@ export const darkTheme = {
   background: "#999",
   backgroundColor: "#000112",
   cardbackground: "#20212C",
+  modalbg:'rgb(54, 53, 55)'
 };

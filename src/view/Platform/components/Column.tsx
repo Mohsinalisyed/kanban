@@ -1,8 +1,9 @@
 // Column.js
 import React from "react";
-import { Box } from "../../../lib/Ui/Box";
 import { HeadingS } from "../../../style";
 import Task from "./Task";
+import { Box } from "../../../lib";
+
 
 
 const Column = ({ columns, status, theme }: any) => {

@@ -3,10 +3,9 @@ import React from "react";
 import styled from "styled-components";
 import Column from "./components/Column";
 import { kandanData } from "../../utlis/data";
-import { Box } from "../../lib/Ui/Box";
-import Flex from "../../lib/Ui/Flex";
 import { HeadingL } from "../../style";
 import { darkTheme, lightTheme } from "../../theme/Theme";
+import { Box, Flex } from "../../lib";
 
 interface IPlatForm {
     theme: string
@@ -23,7 +22,7 @@ const Platform: React.FC<IPlatForm> = ({ theme }) => {
 
     return (
 
-        <Box>
+        <Box style={{minWidth:"100vh"}}>
             {kandanData.boards.map((board) => (
                 <GridContainer>
                     <Column key={board.name} columns={board.columns} status={'Todo'} theme={theme} />
