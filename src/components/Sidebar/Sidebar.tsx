@@ -19,7 +19,6 @@ const MainSidebar: React.FC<ISidebar> = ({ theme, toggleTheme, setIsSidebarHidde
     const openModal = () => {
         setShowModal((prev) => !prev);
     };
-    console.log(showModal)
     const handleToggleSidebar = () => {
         setIsSidebarHidden(!isSidebarHidden);
     };

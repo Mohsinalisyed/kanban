@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container,   HeadingS,  HeadingXL } from '../../style'
 import { containerStyles, logoStyles } from './style'
 import { Box, Button, CustomDropdownToggle,  LogoDark, LogoLight } from '../../lib'
 import Dropdown from "react-bootstrap/Dropdown";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { darkTheme, lightTheme } from '../../theme/Theme';
+import { TaskModal } from './TaskModal';
 interface IHeader {
     theme: string
     isSidebarHidden: boolean
 }
 const Header: React.FC<IHeader> = ({ theme, isSidebarHidden }) => {
     const themeMode = theme === 'light' ? lightTheme : darkTheme;
+    const [showModal, setShowModal] = useState(false);
 
+    const openModal = () => {
+        setShowModal((prev) => !prev);
+    };
+   
     return (
         <Container>
             <Box style={logoStyles}>
@@ -19,7 +25,7 @@ const Header: React.FC<IHeader> = ({ theme, isSidebarHidden }) => {
                 <Box style={{ ...containerStyles, width:"100%", padding: isSidebarHidden ? '24px 20px 24px 0px' : "24px 24px 24px 0px" }}>
                     <HeadingXL style={{ color: themeMode.text, marginLeft: isSidebarHidden ? '0' : "250px" }}>Platform Launch</HeadingXL>
                     <Box style={{display:"flex"}}>
-                        <Button variant="primarySmall" style={{ height: "36px", marginRight: isSidebarHidden ? '0px' : "0" }}>+ Add new task</Button>
+                        <Button variant="primarySmall" style={{ height: "36px", marginRight: isSidebarHidden ? '0px' : "0" }} onClick={openModal}>+ Add new task</Button>
                         <Dropdown style={{margin:"8px 0 0 20px"}}>
                             <Dropdown.Toggle as={CustomDropdownToggle} />
                             <Dropdown.Menu style={{ marginTop: " 20px", background: themeMode.dropdownbg,color:themeMode.text,padding:"16px 0"}}>
@@ -30,6 +36,8 @@ const Header: React.FC<IHeader> = ({ theme, isSidebarHidden }) => {
                    </Box>
                 </Box>
             </Box>
+            <TaskModal showModal={showModal} setShowModal={setShowModal} theme={theme} />
+
        </Container>
     )
 }
